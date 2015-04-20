@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cat Clicker</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <div class="page-title">
+        <h1>Cat Clicker!</h1>
+    </div>
+
+    <div class="container group">
+        <ul class="cats-list"></ul>
+
+        <div class="cat-model"></div>
+    </div>
+
+    <script id="cat-tpl" type="text/template">
+        <h2 class="cat-model__name">{{name}}</h2>
+        <img class="cat-model__image" src="{{imgSrc}}" />
+        <p class="cat-model__click-counter">{{clickCount}}<span> Clicked</span></p>
+    </script>
+
+    <script src="scripts/lib/handlebars.min.js"></script>
+    <script src="scripts/app.js" async defer></script>
+</body>
+</html>
