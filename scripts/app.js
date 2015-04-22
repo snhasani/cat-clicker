@@ -32,34 +32,34 @@
         },
         cats: {
             1: {
-                id: 1,
-                clickCount: 0,
                 name: 'Tabby',
                 imgSrc: 'assets/img/cats/cat_picture1.jpg',
+                clickCount: 0,
+                id: 1
             },
             2: {
-                id: 2,
-                clickCount: 0,
                 name: 'Tiger',
                 imgSrc: 'assets/img/cats/cat_picture3.jpeg',
+                clickCount: 0,
+                id: 2
             },
             3: {
-                id: 3,
-                clickCount: 0,
                 name: 'Scaredy',
                 imgSrc: 'assets/img/cats/cat_picture2.jpeg',
+                clickCount: 0,
+                id: 3
             },
             4: {
-                id: 4,
-                clickCount: 0,
                 name: 'Shadow',
                 imgSrc: 'assets/img/cats/cat_picture4.jpeg',
+                clickCount: 0,
+                id: 4
             },
             5: {
-                id: 5,
-                clickCount: 0,
                 name: 'Sleepy',
                 imgSrc: 'assets/img/cats/cat_picture5.jpeg',
+                clickCount: 0,
+                id: 5
             }
         }
     };
@@ -77,8 +77,6 @@
                 document.getElementsByClassName('cat-model');
             this.catTemplate =
                 document.getElementById('cat-tpl').innerHTML;
-            this.template =
-                Handlebars.compile(this.catTemplate);
 
             this.render();
         },
@@ -86,7 +84,8 @@
         render: function() {
             var currentCat = octopus.getCurrentCat().prop;
             this.catModelContainer[0].innerHTML = '';
-            this.catModelContainer[0].innerHTML = this.template(currentCat);
+            this.catModelContainer[0].innerHTML =
+                utils.twt(this.catTemplate, currentCat);
 
             document.getElementsByClassName('cat-model__image')[0]
                 .addEventListener('click', function(evt) {
@@ -196,6 +195,22 @@
 
     /*-----  End of Octopus  ------*/
 
+
+    /*=============================
+    =            Utils            =
+    =============================*/
+
+    var utils = {
+        twt : function(t, d) {
+            var s = t;
+            for(var p in d) {
+                s = s.replace(new RegExp('{'+p+'}','g'), d[p]);
+            }
+            return s;
+        }
+    }
+
+    /*-----  End of Utils  ------*/
 
 
 
