@@ -19,7 +19,7 @@ body {
   clear: both;
 }
 
-.page-title {
+.logo {
     background: radial-gradient(#C33434 5%, #5C1414 40%, #410F0F 45%);
     padding: 80px 0;
     margin: 0 auto;
@@ -27,7 +27,7 @@ body {
     text-align: center;
 }
 
-.page-title > h1 {
+.logo > h1 {
     animation-name: cat-eye;
     animation-duration: 2s;
     color: #611414;
@@ -127,11 +127,11 @@ body {
 }
 
 @media (max-width: 350px) {
-    .page-title {
+    .logo {
         background: none;
         padding: 60px 0;
     }
-    .page-title > h1 {
+    .logo > h1 {
         color: #F29111;
     }
 
